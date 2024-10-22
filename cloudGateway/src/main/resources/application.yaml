@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-cloud-gateway-app
+
+  cloud:
+    gateway:
+      routes:
+         - id: fact-num
+           uri: http://localhost:9011
+           predicates:
+             - Path=/fact/number/**
+      
+#        - id: helloservice-route
+#          uri: http://localhost:9002
+#          predicates:
+#            - Path=/rest/service/**
+
+server:
+  port: 9001
